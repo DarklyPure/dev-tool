@@ -1,0 +1,28 @@
+{
+  "CodeFlavours": [
+    {
+      "Name": "C#"
+    },
+    {
+      "Name": "Typescript"
+    }
+  ],
+  "CodeObjectMappings": [
+    {
+      "CodeObject": "Builder",
+      "CodeFlavours": [
+        {
+          "Name": "C#",
+          "Extensions": ".cs"
+        },
+        {
+          "Name": "Typescript",
+          "Extensions": ".ts"
+        }
+      ]
+    }
+  ],
+  "PermissableFileTypes": [
+    ".dll"
+  ]
+}

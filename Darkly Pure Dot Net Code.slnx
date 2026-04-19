@@ -1,0 +1,46 @@
+<Solution>
+  <Folder Name="/Apps/">
+    <Project Path="Pure.Coders.Toolboox.WinUI/Pure.Coders.Toolboox.WinUI.csproj" Id="9280a930-0756-486d-990e-e1a8e5db3f71">
+      <Platform Project="x64" />
+      <Deploy />
+    </Project>
+    <Project Path="Pure.Coders.Toolbox.WPF/Pure.Coders.Toolbox.WPF.csproj" />
+    <Project Path="TheGarden.MAUI/TheGarden.MAUI.csproj" />
+    <Project Path="TheGarden.WPF/TheGarden.WPF.csproj" Id="4aff7ef8-e80b-4642-a08e-b5ac04c752aa" />
+  </Folder>
+  <Folder Name="/BO/">
+    <Project Path="Pure.BO.Coders/Pure.BO.Coders.csproj" Id="46702669-5c19-41ae-9db2-983fcd1bbde0" />
+    <Project Path="Pure.BO.Core/Pure.BO.Core.csproj" />
+    <Project Path="Pure.BO.Horticulture/Pure.BO.Horticulture.csproj" />
+    <Project Path="Pure.BO.Media/Pure.BO.Media.csproj" />
+    <Project Path="Pure.BO.Spaces/Pure.BO.Spaces.csproj" />
+    <Project Path="Pure.BO.Transport/Pure.BO.Transport.csproj" />
+  </Folder>
+  <Folder Name="/DALS/">
+    <Project Path="Pure.Dal.Coders.Toolbox/Pure.Dal.Coders.Toolbox.csproj" Id="319959a0-059a-4036-8ee1-fa0b11b96d78" />
+    <Project Path="Pure.Dal.TheGarden/Pure.Dal.TheGarden.csproj" Id="0c801b07-483b-422e-bf62-f5268b76edb8" />
+  </Folder>
+  <Folder Name="/Libraries/">
+    <Project Path="Pure.Library.CodeGenerator/Pure.Library.CodeGenerator.csproj" />
+    <Project Path="Pure.Library.Coders.Toolbox/Pure.Library.Coders.Toolbox.csproj" Id="dc6fb873-713d-41f2-bc15-1484b7c0ee88" />
+    <Project Path="Pure.Library.Logging/Pure.Library.Logging.csproj" />
+    <Project Path="Pure.Library.MVVM/Pure.Library.MVVM.csproj" Id="2bd5671f-8d11-447a-8114-4e703e5b6bce" />
+    <Project Path="Pure.Library.Repository/Pure.Library.Repository.csproj" Id="0f53f13c-be87-41d7-a360-1333bb26068f" />
+    <Project Path="Pure.Library.SQLite.Extensions/Pure.Library.SQLite.Extensions.csproj" Id="d847b3e3-e588-432b-a4e7-643234b6a1ca" />
+    <Project Path="Pure.Library.WinUI/Pure.Library.WinUI.csproj" Id="4a37da8e-9595-4c8d-9d11-1164eadd894c" />
+    <Project Path="Pure.Library.WPF/Pure.Library.WPF.csproj" />
+    <Project Path="Pure.Library/Pure.Library.csproj" />
+  </Folder>
+  <Folder Name="/Libraries/DTO/">
+    <Project Path="Pure.DTO.Core/Pure.DTO.Core.csproj" Id="43feef2f-34bb-4da9-9ce3-dbe9e4d7968e" />
+  </Folder>
+  <Folder Name="/Services/">
+    <Project Path="Pure.Coders.Service/Pure.Coders.Service.csproj" Id="d7e3e1c8-f053-4995-96eb-f4cf80155bcc" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="Pure.Coders.Service.Tests/Pure.Coders.Service.Tests.csproj" Id="b03c5ebe-60c1-42b8-95c0-6f30388e5c2e" />
+    <Project Path="Pure.Library.Tests/Pure.Library.Tests.csproj" Id="9580f848-4bbf-47ca-8f08-ce4a17a6ca36" />
+  </Folder>
+  <Project Path="Darkly Pure Dot Net Code.AppHost/Darkly Pure Dot Net Code.AppHost.csproj" Id="aa9b1fdf-0768-4409-a4d2-50b205f9589c" />
+  <Project Path="Darkly Pure Dot Net Code.ServiceDefaults/Darkly Pure Dot Net Code.ServiceDefaults.csproj" />
+</Solution>

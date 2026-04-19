@@ -1,0 +1,4 @@
+﻿namespace Pure.BO.Media
+{
+
+}

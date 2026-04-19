@@ -1,0 +1,71 @@
+﻿<mah:MetroWindow x:Class="Pure.Coders.Toolbox.WPF.Views.RepositoryGenerator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pure.Coders.Toolbox.WPF.Views"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        mc:Ignorable="d"
+        Title="RepositoryGenerator" Height="450" Width="800">
+    <Grid x:Name="rootGrid">
+        <StackPanel x:Name="rootStackVertical" Orientation="Vertical">
+            <StackPanel x:Name="rootStackHorizontal" Orientation="Horizontal">
+                <Border BorderBrush="MediumPurple" BorderThickness="1" Margin="4" Padding="4">
+                    <StackPanel x:Name="ContextStack" Orientation="Vertical">
+                        <Label Content="Input the DbContext name."/>
+                        <TextBox Text="{Binding DbContextName , Mode=TwoWay}" />
+                    </StackPanel>
+                </Border>
+
+                <Border BorderBrush="MediumPurple" BorderThickness="1" Margin="4" Padding="4" MinWidth="150" MinHeight="200">
+                    <StackPanel x:Name="FileBrowserStack" Orientation="Vertical">
+                        <Button x:Name="FileBrowserButton" 
+                Margin="10" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Stretch"
+                ToolTip="Click to locate your codefiles."
+                Command="{Binding ButtonClick}"
+                CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
+                            <iconPacks:MaterialDesign Kind="FolderOpenOutline" />
+                        </Button>
+                        <Label Content="Choose a code file." />
+                        <ListBox x:Name="FilesListBox" 
+                 ItemsSource="{Binding Files}" 
+                 SelectedItem="{Binding SelectedFile}"
+                 MaxHeight="150"
+                 MaxWidth="300"
+                 BorderThickness="1"
+                 ScrollViewer.VerticalScrollBarVisibility="Auto">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}" />
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </StackPanel>
+                </Border>
+
+                <Border BorderBrush="MediumPurple" BorderThickness="1" Margin="4" Padding="4" MinWidth="150" MinHeight="200">
+                    <StackPanel x:Name="ClassStack" Orientation="Vertical">
+                        <Label Content="Select your entity."/>
+                        <ListBox x:Name="ClassesListBox"
+                   ItemsSource="{Binding Classes}"
+                   MaxHeight="150"
+                   MaxWidth="300"
+                   BorderThickness="1"
+                   ScrollViewer.VerticalScrollBarVisibility="Auto"
+                   SelectedItem="{Binding SelectedClass}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}" />
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</mah:MetroWindow>

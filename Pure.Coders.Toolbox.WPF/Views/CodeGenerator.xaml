@@ -1,0 +1,154 @@
+﻿<mah:MetroWindow x:Class="Pure.Coders.Toolbox.WPF.Views.CodeGenerator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pure.Coders.Toolbox.WPF.Views"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        mc:Ignorable="d"
+        Title="CodeGeneratorNew" Height="450" Width="800">
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </Window.Resources>
+    
+    <Grid x:Name="rootGrid">
+        <StackPanel x:Name="rootStackVertical" Orientation="Vertical">
+
+            <StackPanel x:Name="rootStackHorizontal" Orientation="Horizontal">
+
+                <Border BorderBrush="MediumPurple" BorderThickness="1" Margin="4" Padding="4">
+                    <StackPanel x:Name="CodeFlavourStack" Orientation="Vertical">
+                        <Label Content="Select your flavour of code." />
+                        <ComboBox ItemsSource="{Binding CodeFlavours}" SelectedItem="{Binding SelectedCodeFlavour}" Margin="4">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}" />
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+                </Border>
+
+                <Border BorderBrush="MediumPurple" BorderThickness="1" Margin="4" Padding="4" MinWidth="150" MinHeight="200">
+                    <StackPanel x:Name="FileBrowserStack" Orientation="Vertical">
+                        <Button x:Name="FileBrowserButton" 
+                                Margin="10" 
+                                HorizontalAlignment="Center" 
+                                VerticalAlignment="Stretch"
+                                ToolTip="Click to locate your codefiles."
+                                Command="{Binding ButtonClick}"
+                                CommandParameter="{Binding RelativeSource={RelativeSource Self}}">
+                            <iconPacks:MaterialDesign Kind="FolderOpenOutline" />
+                        </Button>
+                        <Label Content="Choose a code file." />
+                        <ListBox x:Name="FilesListBox" 
+                                 ItemsSource="{Binding Files}" 
+                                 SelectedItem="{Binding SelectedFile}"
+                                 MaxHeight="150"
+                                 MaxWidth="300"
+                                 BorderThickness="1"
+                                 ScrollViewer.VerticalScrollBarVisibility="Auto">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}" />
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </StackPanel>
+                </Border>
+
+                <Border BorderBrush="MediumPurple" BorderThickness="1" Margin="4" Padding="4" MinWidth="150" MinHeight="200">
+                    <StackPanel x:Name="ClassStack" Orientation="Vertical">
+                        <Label Content="Classes"/>
+                        <ListBox x:Name="ClassesListBox"
+                                   ItemsSource="{Binding Classes}"
+                                   MaxHeight="150"
+                                   MaxWidth="300"
+                                   BorderThickness="1"
+                                   ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                   SelectedItem="{Binding SelectedClass}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}" />
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </StackPanel>
+                </Border>
+
+                <Border BorderBrush="MediumPurple" BorderThickness="1" Margin="4" Padding="4" MinWidth="150" MinHeight="200">
+                    <StackPanel x:Name="PropertiesStack" Orientation="Vertical">
+                        <Label Content="Properties - (Optional)"/>
+                        <ListBox x:Name="PropertiesListBox"
+                                 ItemsSource="{Binding Properties}"
+                                 MaxHeight="150"
+                                 MaxWidth="300"
+                                 BorderThickness="1"
+                                 ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                 SelectedItem="{Binding SelectedProperty}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}" />
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>                        
+                    </StackPanel>
+                </Border>
+
+                <Border BorderBrush="MediumPurple" BorderThickness="1" Margin="4" Padding="4" MinWidth="150" MinHeight="200">
+                    <StackPanel x:Name="CodeObjectStack" Orientation="Vertical">
+                        <Label Content="Code Objects"/>
+                        <ListBox x:Name="CodeObjectsListBox"
+                                 ItemsSource="{Binding CodeObjectMappings}"
+                                 MaxHeight="150"
+                                 MaxWidth="300"
+                                 BorderThickness="1"
+                                 ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                 SelectedItem="{Binding SelectedCodeObjectMapping}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding CodeObject}" />
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <Border BorderBrush="MediumPurple" BorderThickness="1" Margin="4" Padding="4">
+                <StackPanel x:Name="NamespaceStack" Orientation="Vertical">
+                    <Label Content="The predicted/root namespace for this Library is as shown below. Change for your needs." />
+                    <TextBox x:Name="UseNamespace" Text="{Binding UseNamespace, UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
+            </Border>
+
+            <!--<Border BorderBrush="MediumPurple" BorderThickness="1" Margin="4" Padding="4">
+                <StackPanel x:Name="CodeStack" Orientation="Vertical">
+                    <TextBlock x:Name="GeneratedCodeLabel" Text="{Binding GeneratedCodeLabelText}" TextWrapping="WrapWithOverflow" />
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <RichTextBox x:Name="GeneratedCode" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Height="Auto" VerticalScrollBarVisibility="Auto">
+                            <FlowDocument>
+                                <Paragraph>
+                                    <Run Text="{Binding GeneratedCode}" />
+                                </Paragraph>
+                            </FlowDocument>
+                        </RichTextBox>
+                    </ScrollViewer>
+                </StackPanel>
+            </Border>-->
+
+            <Border BorderBrush="MediumPurple" BorderThickness="1" Margin="4" Padding="4">
+                <RichTextBox VerticalScrollBarVisibility="Visible" MaxHeight="300">
+                    <FlowDocument PageHeight="100">
+                        <Paragraph>
+                            <Run Text="{Binding GeneratedCode, Mode=TwoWay}"/>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+            </Border>
+        </StackPanel>
+    </Grid>
+</mah:MetroWindow>

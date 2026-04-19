@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Pure.Coders.Toolboox.WinUI (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Pure.Coders.Toolboox.WinUI (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

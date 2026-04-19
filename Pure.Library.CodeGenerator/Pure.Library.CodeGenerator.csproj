@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="options.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="10.0.4" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="10.0.4" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="10.0.4" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Content Include="options.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pure.BO.Coders\Pure.BO.Coders.csproj" />
+    <ProjectReference Include="..\Pure.DTO.Core\Pure.DTO.Core.csproj" />
+    <ProjectReference Include="..\Pure.Library.Logging\Pure.Library.Logging.csproj" />
+    <ProjectReference Include="..\Pure.Library.Repository\Pure.Library.Repository.csproj" />
+    <ProjectReference Include="..\Pure.Library\Pure.Library.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
+</Project>

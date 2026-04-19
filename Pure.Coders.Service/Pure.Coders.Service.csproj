@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pure.BO.Coders\Pure.BO.Coders.csproj" />
+    <ProjectReference Include="..\Pure.BO.Core\Pure.BO.Core.csproj" />
+    <ProjectReference Include="..\Pure.Dal.Coders.Toolbox\Pure.Dal.Coders.Toolbox.csproj" />
+    <ProjectReference Include="..\Pure.Library.CodeGenerator\Pure.Library.CodeGenerator.csproj" />
+    <ProjectReference Include="..\Pure.Library.Coders.Toolbox\Pure.Library.Coders.Toolbox.csproj" />
+  </ItemGroup>
+
+</Project>
